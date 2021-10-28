@@ -1,0 +1,29 @@
+.list-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 16px;
+  margin-bottom: 32px;
+}
+.list-item:last-child {
+  margin-bottom: 0;
+}
+.list-item__img {
+  background: var(--white);
+  border-radius: 4px;
+  height: 40px;
+  object-fit: cover;
+  position: relative;
+  width: 40px;
+}
+.list-item__bank-name {
+  font-size: 0.95rem;
+  margin: -2px 0 4px;
+}
+.list-item__ussd {
+  color: var(--near-white);
+  font-size: 0.875rem;
+}
+.list-item__arrow-container {
+  align-items: center;
+  display: flex;
+}

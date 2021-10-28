@@ -1,0 +1,12 @@
+.banks-list {
+  padding: 32px 24px;
+}
+.banks-list__loader {
+  display: flex;
+  justify-content: center;
+}
+.banks-list__no-match {
+  color: var(--near-white);
+  font-size: 0.95rem;
+  text-align: center;
+}

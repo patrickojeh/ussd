@@ -1,0 +1,25 @@
+.tabs {
+  background: var(--near-black);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 6px;
+}
+.tabs__button {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 9px 0 11px;
+}
+.tabs__button:focus {
+  outline: none;
+}
+.tabs__button--active {
+  background: var(--white);
+  color: var(--near-black);
+}

@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.navbar__logo {
+  font-family: Syne;
+  font-weight: 900;
+}
+.navbar__button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.navbar__button:focus {
+  outline: none;
+}

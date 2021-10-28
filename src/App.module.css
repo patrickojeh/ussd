@@ -1,0 +1,30 @@
+:root {
+  --black: #000;
+  --near-black: #161719;
+  --near-white: rgba(255, 255, 255, 0.25);
+  --white: #fff;
+}
+.app {
+  background: var(--near-black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "Gt Walsheim Pro";
+  font-weight: normal;
+  src: url(./fonts/GTWalsheimPro-Regular.ttf);
+  font-display: block;
+}
+@font-face {
+  font-family: "Gt Walsheim Pro";
+  font-weight: 500;
+  src: url(./fonts/GTWalsheimPro-Medium.ttf);
+  font-display: block;
+}
+@font-face {
+  font-family: "Syne";
+  font-weight: 900;
+  src: url(./fonts/Syne-ExtraBold.ttf);
+  font-display: block;
+}

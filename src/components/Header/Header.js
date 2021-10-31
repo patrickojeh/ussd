@@ -4,11 +4,10 @@ import Tabs from '../UI/Tabs';
 import Search from '../Search/Search';
 import classes from './Header.module.css';
 
-const Header = () => {
-
+const Header = (props) => {
   return <Fragment>
     <div className={classes.Header}>
-      <Navbar />
+      <Navbar showModal={props.onShowModal} />
       <Tabs />
     </div>
     <Search />

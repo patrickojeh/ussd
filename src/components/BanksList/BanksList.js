@@ -32,6 +32,14 @@ const BanksList = (props) => {
     }
   }, [])
 
+  const BankListItemHandler = (e) => {
+    const bankItemID = e.currentTarget.getAttribute('data-id');
+    props.onShowModal({
+      bankItemID,
+      type: 'USSD'
+    });
+  }
+
   const loader = isLoading &&
     <div className={classes['banks-list__loader']}>
         <Loader
@@ -47,8 +55,11 @@ const BanksList = (props) => {
     (hasError) ?
     <p className={classes['banks-list__no-match']}>Something went wrong</p> :
     banksDataContext.data.map(bank => {
-      return <BankListItem 
+      return (bank.ussd) &&
+      <BankListItem 
+        onClickItem={BankListItemHandler}
         key={bank.code}
+        id={bank.code}
         name={bank.name}
         ussd={bank.ussd}
         logo={bank.logo}

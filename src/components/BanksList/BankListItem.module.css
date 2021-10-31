@@ -1,8 +1,19 @@
 .list-item {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: inherit;
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 16px;
+  cursor: pointer;
   margin-bottom: 32px;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+.list-item:focus {
+  outline: none;
 }
 .list-item:last-child {
   margin-bottom: 0;
@@ -17,7 +28,7 @@
 }
 .list-item__bank-name {
   font-size: 0.95rem;
-  margin: -2px 0 4px;
+  margin: 1px 0 4px;
 }
 .list-item__ussd {
   color: var(--near-white);

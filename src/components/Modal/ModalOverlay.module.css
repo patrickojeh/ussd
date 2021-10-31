@@ -1,0 +1,21 @@
+.modal-overlay {
+  --near-black: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  animation: fadeIn 0.2s ease-in forwards;
+  content: "";
+  background: var(--near-black);
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

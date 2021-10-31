@@ -1,0 +1,17 @@
+.modal {
+  background: var(--near-black);
+  border-radius: 24px 24px 0 0;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: fixed;
+  padding: 24px 24px 28px;
+  transform: translateY(200px);
+  transition: 1s linear all;
+  width: -webkit-fill-available;
+  z-index: 2;
+}
+.modal--show {
+  transition: 0.25s cubic-bezier(1, 0, 0, 1) all;
+  transform: translateY(0);
+}

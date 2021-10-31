@@ -1,0 +1,49 @@
+.sort-modal__list {
+  list-style-type: none;
+  margin-bottom: 32px;
+  padding: 0;
+}
+.sort-modal__list-item {
+  color: var(--white);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 24px;
+}
+.sort-modal__label {
+  padding-left: 16px;
+  padding-left: 16px;
+  width: -webkit-fill-available;
+}
+.sort-modal__checkbox {
+  position: relative;
+  visibility: hidden;
+}
+.sort-modal__checkbox::before {
+  content: "";
+  background: transparent;
+  border: 1px solid var(--near-white);
+  border-radius: 360%;
+  display: block;
+  height: 14px;
+  visibility: visible;
+  margin-top: -2px;
+  position: absolute;
+  width: 14px;
+}
+.sort-modal__checkbox:checked::before {
+  border-color: var(--white);
+}
+.sort-modal__checkbox:checked::after {
+  content: "";
+  background: var(--white);
+  border: 1px solid transparent;
+  border-radius: 360%;
+  display: block;
+  height: 14px;
+  margin-top: -2px;
+  position: absolute;
+  transform: scale(0.4);
+  transform-origin: center;
+  visibility: visible;
+  width: 14px;
+}

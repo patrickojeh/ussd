@@ -3,7 +3,7 @@ import Input from '../UI/Input';
 import { BanksDataContext as bdc } from '../../context/banks-data-context';
 import classes from './Search.module.css';
 
-function Search(props) {
+const Search = (props) => {
   const banksDataContext = useContext(bdc);
   const searchHandler = (event) => {
     const keyword = event.target.value.trim().toLowerCase();

@@ -2,9 +2,15 @@ import classes from '../Navbar/Navbar.module.css';
 import filterIcon from '../../svg/icon--filter.svg';
 import infoIcon from '../../svg/icon--info.svg';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const filterHandler = () => {
+    props.showModal({
+      type: 'SORT'
+    })
+  }
+
   return <div className={classes.navbar}>
-    <button type="button" className={classes.navbar__button}>
+    <button onClick={filterHandler} type="button" className={classes.navbar__button}>
       <img src={filterIcon} alt="Filter control icon" />
     </button>
     <span className={classes.navbar__logo}>

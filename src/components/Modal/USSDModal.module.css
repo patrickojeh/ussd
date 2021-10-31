@@ -1,0 +1,28 @@
+.ussd-modal {
+  text-align: center;
+}
+.ussd-modal__logo {
+  background: var(--white);
+  border-radius: 4px;
+  height: 20px;
+  object-fit: cover;
+  width: 20px;
+  position: relative;
+  top: 4px;
+  margin-right: 8px;
+}
+.ussd-modal__name {
+  color: var(--near-white);
+  font-size: 0.95rem;
+}
+.ussd-modal__ussd {
+  color: var(--white);
+  font-size: 1.65rem;
+  margin-bottom: 32px;
+  margin-top: 12px;
+}
+.ussd-modal__button-grid {
+  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

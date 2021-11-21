@@ -1,5 +1,5 @@
 import { Fragment, useContext, useEffect, useRef, useState } from 'react';
-import { BanksDataContext as bdc } from '../../context/banks-data-context';
+import { BanksDataContext as bdc } from '../../store/banks-data-context';
 import  { Button, ButtonLink } from '../UI/Button';
 import copy from 'copy-to-clipboard';
 import classes from './USSDModal.module.css';
@@ -13,15 +13,18 @@ const USSDModal = (props) => {
       (bank.code === props.bankId) && setSelectedBank(bank);
       return false;
     })
-  }, [])
+  }, [banksDataContext.defaultData, props.bankId])
   const copyHandler = () => {
     const ussd = copyBtn.current.getAttribute('data-ussd');
-    let copyBtnText = copyBtn.current.textContent;
     copy(ussd);
-    copyBtn.current.textContent = 'Copied!';
+    copyBtn.current.textContent = 'Copied';
     setTimeout(() => {
-      copyBtn.current.textContent = 'Copy';
-    }, 3000)    
+      try {
+        copyBtn.current.textContent = 'Copy';
+      } catch (e) {
+        return false;
+      } 
+    }, 3000)
   }
   return <Fragment>
     { selectedBank && [selectedBank].map(bank => {

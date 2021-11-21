@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Input from '../UI/Input';
-import { BanksDataContext as bdc } from '../../context/banks-data-context';
+import { BanksDataContext as bdc } from '../../store/banks-data-context';
 import classes from './Search.module.css';
 
 const Search = (props) => {

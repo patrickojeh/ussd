@@ -37,4 +37,5 @@
 .list-item__arrow-container {
   align-items: center;
   display: flex;
+  padding-top: 12px;
 }

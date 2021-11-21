@@ -30,7 +30,7 @@ export const BanksDataProvider = (props) => {
       },
       search: function(result) {
         setData(result);
-        setSortBy('asc')
+        setSortBy('asc');
       }
     }}>
     { props.children }

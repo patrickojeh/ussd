@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import classes from './Tabs.module.css';
 
-const Tabs = () => {
-  const tabName = {
-    all: 'All',
-    favs: 'Favorites'
-  }
-  const [activeTab, setActiveTab] = useState(tabName.all)
-
+const Tabs = (props) => {
+  const [activeTab, setActiveTab] = useState('All')
   const tabsBtnHandler = (event) => {
+    props.onActiveTab(event.target.textContent);
     setActiveTab(event.target.textContent);
   }
 
-  let allBtnClass = (activeTab === tabName.all) && classes['tabs__button--active'];
-  let favBtnClass = (activeTab === tabName.favs) && classes['tabs__button--active'];
+console.log(activeTab)
+  let allBtnClass = (activeTab === 'All') && classes['tabs__button--active'];
+  let favBtnClass = (activeTab === 'Favorites') && classes['tabs__button--active'];
 
   return <div className={classes.tabs}>
-    <button onClick={tabsBtnHandler} className={`${classes.tabs__button} ${allBtnClass}`} type="button">{tabName.all}</button>
-    <button onClick={tabsBtnHandler} className={`${classes.tabs__button} ${favBtnClass}`} type="button">{tabName.favs}</button>
+    <button onClick={tabsBtnHandler} className={`${classes.tabs__button} ${allBtnClass}`} type="button">All</button>
+    <button onClick={tabsBtnHandler} className={`${classes.tabs__button} ${favBtnClass}`} type="button">Favorites</button>
   </div>
 }
 

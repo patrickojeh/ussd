@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Button } from '../UI/Button';
-import { BanksDataContext as bdc } from '../../context/banks-data-context';
+import { BanksDataContext as bdc } from '../../store/banks-data-context';
 import classes from './SortModal.module.css';
 
 const SortModal = (props) => {

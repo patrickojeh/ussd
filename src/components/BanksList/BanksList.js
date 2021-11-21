@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import BankListItem from './BankListItem';
 import Loader from 'react-loader-spinner';
-import { BanksDataContext as bdc } from '../../context/banks-data-context';
+import { BanksDataContext as bdc } from '../../store/banks-data-context';
 import classes from './BanksList.module.css';
 
 const BanksList = (props) => {
@@ -17,9 +17,12 @@ const BanksList = (props) => {
         return response.json();
       })
       .then(data => {
-        localStorage.setItem('banks_data', JSON.stringify(data));
+        const modifiedData = data.map(item => {
+          return Object.assign(item, {fav: false});
+        })
+        localStorage.setItem('banks_data', JSON.stringify(modifiedData));
         setIsLoading(false);
-        banksDataContext.updateBanksData(data);
+        banksDataContext.updateBanksData(modifiedData);
       })
       .catch(e => {
         setIsLoading(false);
@@ -27,7 +30,7 @@ const BanksList = (props) => {
       })
     } else {
       let parsedBankData = JSON.parse(storedBankData);
-      setIsLoading(false);
+      setIsLoading(false);      
       banksDataContext.updateBanksData(parsedBankData);
     }
   }, [])
